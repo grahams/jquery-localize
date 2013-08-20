@@ -108,10 +108,7 @@
     };
     localizeInputElement = function(elem, key, value) {
       var val;
-      val = value;
-      if (value.value) {
-        val = value.value;
-      }
+      val = $.isPlainObject(value) ? value.value : value;
       if (elem.is("[placeholder]")) {
         return elem.attr("placeholder", val);
       } else {

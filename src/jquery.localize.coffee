@@ -82,12 +82,7 @@ $.localize = (pkg, options = {}) ->
     localizeForSpecialKeys(elem, value) if $.isPlainObject(value)
 
   localizeInputElement = (elem, key, value) ->
-    val = value
-    # if the user wants to set the title of an input element via
-    # keyword.title, we need to specially handle the keyword.value
-    if value.value
-      val = value.value
-
+    val = if $.isPlainObject(value) then value.value else value
     if elem.is("[placeholder]")
       elem.attr("placeholder", val)
     else

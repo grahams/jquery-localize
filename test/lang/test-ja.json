@@ -1,10 +1,10 @@
 {
   "test": {
     "nested": "nested success",
-    "normalinput": "normalinput success",
-    "titledinput": {
-        "value": "titledinput value success",
-        "title": "titledinput title success"
+    "input": "input success",
+    "input_as_obj": {
+        "value": "input_as_obj value success",
+        "title": "input_as_obj title success"
     },
     "optgroup": "optgroup success",
     "option": "option success",
