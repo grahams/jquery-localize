@@ -42,13 +42,13 @@ http://keith-wood.name/localisation.html
           break;
         case 2:
           if (lang.length >= 2) {
-            file = "" + pkg + "-" + (lang.substring(0, 2)) + "." + fileExtension;
+            file = pkg + "-" + (lang.substring(0, 2)) + "." + fileExtension;
             return jsonCall(file, pkg, lang, level);
           }
           break;
         case 3:
           if (lang.length >= 5) {
-            file = "" + pkg + "-" + (lang.substring(0, 5)) + "." + fileExtension;
+            file = pkg + "-" + (lang.substring(0, 5)) + "." + fileExtension;
             return jsonCall(file, pkg, lang, level);
           }
       }
@@ -56,7 +56,7 @@ http://keith-wood.name/localisation.html
     jsonCall = function(file, pkg, lang, level) {
       var ajaxOptions, errorFunc, successFunc;
       if (options.pathPrefix != null) {
-        file = "" + options.pathPrefix + "/" + file;
+        file = options.pathPrefix + "/" + file;
       }
       successFunc = function(d) {
         $.extend(intermediateLangData, d);
@@ -141,11 +141,11 @@ http://keith-wood.name/localisation.html
       return setAttrFromValueForKey(elem, "src", value);
     };
     valueForKey = function(key, data) {
-      var keys, value, _i, _len;
+      var i, keys, len, value;
       keys = key.split(/\./);
       value = data;
-      for (_i = 0, _len = keys.length; _i < _len; _i++) {
-        key = keys[_i];
+      for (i = 0, len = keys.length; i < len; i++) {
+        key = keys[i];
         value = value != null ? value[key] : null;
       }
       return value;
@@ -168,13 +168,13 @@ http://keith-wood.name/localisation.html
         return "^" + string_or_regex_or_array + "$";
       } else if (string_or_regex_or_array.length != null) {
         return ((function() {
-          var _i, _len, _results;
-          _results = [];
-          for (_i = 0, _len = string_or_regex_or_array.length; _i < _len; _i++) {
-            thing = string_or_regex_or_array[_i];
-            _results.push(regexify(thing));
+          var i, len, results;
+          results = [];
+          for (i = 0, len = string_or_regex_or_array.length; i < len; i++) {
+            thing = string_or_regex_or_array[i];
+            results.push(regexify(thing));
           }
-          return _results;
+          return results;
         })()).join("|");
       } else {
         return string_or_regex_or_array;
